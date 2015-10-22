@@ -40,6 +40,8 @@
 
 #include "common.h"
 
+
+
 void __iomem *zynq_scu_base;
 
 /**
@@ -100,6 +102,7 @@ static void __init zynq_init_late(void)
  */
 static void __init zynq_init_machine(void)
 {
+	int ret;
 	struct platform_device_info devinfo = { .name = "cpufreq-cpu0", };
 
 	of_platform_populate(NULL, of_default_bus_match_table, NULL, NULL);
